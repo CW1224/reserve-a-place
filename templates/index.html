@@ -4,10 +4,33 @@
 
 <div class="container-fluid">
     <div class="row">
-
-        
+        <div class="col-12">
+            <h2 class="text-center text-decoration-underline py-3">Manage my Bookings</h2>
+        </div>
     </div>
 
+    {% for booking in booking_list %}
+    <div class="row py-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Booking Reference: {{ booking.booking_id }}</h5>
+                    <p class="card-text">
+                        Booking Status: {% if booking.status == 1 %}
+                        Booking Accepted
+                        {% else %}
+                        Booking Requested
+                        {% endif %}
+                    </p>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">Booking Date: {{ booking.booking_date }}</li>
+                </ul>
+
+            </div>
+        </div>
+        {% endfor %}
 </div>
 
 {% endblock %}

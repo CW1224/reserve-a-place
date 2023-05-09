@@ -1,0 +1,19 @@
+.small {
+    font-size: large;
+}
+
+.big {
+    font-size: xx-large;
+}
+
+.btn-red {
+    background: rgb(238, 74, 74);
+}
+
+.btn-cream {
+    background: rgb(248, 232, 151);
+}
+
+.green {
+    color: rgb(54, 169, 42);
+}

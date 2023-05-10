@@ -10,6 +10,9 @@ class MainPage(TemplateView):
         return render(
             request,
             "index.html",
+            {
+                "home_active": "green",
+            }
         )
 
 class MenuPage(TemplateView):
@@ -19,6 +22,9 @@ class MenuPage(TemplateView):
         return render(
             request,
             "menu.html",
+            {
+                "menu_active": "green",
+            },
         )
 
 class ContactPage(TemplateView):
@@ -28,6 +34,17 @@ class ContactPage(TemplateView):
         return render(
             request,
             "contact.html",
+            
+        )
+
+class BookingPage(TemplateView):
+    template_name = "booking.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            "booking.html",
+            
         )
 
 class BookingDetail(View):
@@ -46,3 +63,6 @@ class BookingList(generic.ListView):
     queryset = Booking.objects.order_by('-created_date')
     template_name = 'reservations.html'
     paginate_by = 6
+    
+    def get_queryset(self):
+        return Booking.objects.filter(user_id=self.request.user)

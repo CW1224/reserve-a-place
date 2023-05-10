@@ -34,7 +34,9 @@ class ContactPage(TemplateView):
         return render(
             request,
             "contact.html",
-            
+            {
+                "contact_active": "green",
+            },
         )
 
 class BookingPage(TemplateView):
@@ -44,7 +46,9 @@ class BookingPage(TemplateView):
         return render(
             request,
             "booking.html",
-            
+            {
+                "booking_active": "green",
+            }
         )
 
 class BookingDetail(View):
@@ -63,6 +67,11 @@ class BookingList(generic.ListView):
     queryset = Booking.objects.order_by('-created_date')
     template_name = 'reservations.html'
     paginate_by = 6
-    
+    extra_context = {
+        "view_booking_active": "green"
+    }
+
     def get_queryset(self):
         return Booking.objects.filter(user_id=self.request.user)
+    
+

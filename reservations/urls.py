@@ -2,7 +2,9 @@ from . import views
 from django.urls import path, include
 
 urlpatterns = [
-    path('', views.BookingList.as_view(), name='home'),
-    path('reservation_detail/<str:booking_id>/', views.BookingDetail.as_view(), name='reservation_detail.urls'), 
-    path('', views.BookingList.as_view(), name='reservations.urls'),
+    path('', views.MainPage.as_view(), name='home'),
+    path('contact/', views.ContactPage.as_view(), name='contacts'),
+    path('menu/', views.MenuPage.as_view(), name='menu'),
+    path('reservations/', views.BookingList.as_view(), name='reservations.urls'),
+
 ]

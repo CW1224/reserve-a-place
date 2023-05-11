@@ -6,6 +6,11 @@
     font-size: xx-large;
 }
 
+.nav-link:hover {
+    border:2px; 
+    background-color: rgb(148, 222, 140);
+}
+
 .btn-red {
     background: rgb(238, 74, 74);
 }
@@ -19,6 +24,10 @@
 }
 
 .pressed {
-    background-color: blue;
-    
+    background-color: rgb(148, 222, 140);
+    color:white;
+}
+
+footer {
+    bottom: 0;
 }

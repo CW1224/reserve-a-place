@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic import TemplateView
 from .models import Booking
+from .forms import UpdateBooking
 
 class MainPage(TemplateView):
     template_name = "index.html"
@@ -77,6 +78,46 @@ class AddBooking(View):
         online_booking.save()
 
         return redirect('reservations')
+
+class EditBooking(View):
+    model = Booking
+    template_name = 'edit_booking.html'
+    context_object_name = 'edit_booking'
+
+    def get(self, request, booking_id, *args, **kwargs):
+        booking = get_object_or_404(Booking, pk=booking_id)
+
+        return render(
+            request,
+            "edit_booking.html",
+            {
+                "booking": booking,
+                "updated": False,
+                "Update_Booking": UpdateBooking(instance=booking)
+            },
+        )
+
+    def post(self, request, booking_id, *args, **kwargs):
+        booking = get_object_or_404(Booking, pk=booking_id)
+
+        booking_details_form = UpdateBooking(
+            request.POST, instance=booking)
+
+        if booking_details_form.is_valid():
+            booking.status = 0
+            booking_updates = booking_details_form.save()
+        else:
+            booking_details_form = UpdateBooking(instance=booking)
+
+        return render(
+            request,
+            "edit_booking.html",
+            {
+                "booking": booking,
+                'updated': True,
+                "Update_Booking": booking_details_form,
+            },
+        )
 
 class BookingList(generic.ListView):
     model = Booking

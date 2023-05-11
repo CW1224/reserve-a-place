@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container">
+
+    <div>{{ booking.booking_id }}</div>
+        <p class="card-text col">
+            Booking Status: {% if booking.status == 1 %}
+            Booking Accepted
+            {% else %}
+            Booking Requested
+            {% endif %}
+        </p>
+        <ul class="list-group">
+            <li class="list-group-item">Booking Date: {{ booking.booking_date }}</li>
+            <li class="list-group-item">Booking Time: {{ booking.booking_time }}</li>
+            <li class="list-group-item">Number of Guests: {{ booking.number_guests }}</li>
+            <li class="list-group-item">Highchair: 
+                {% if booking.high_chair == True %}
+                Required
+                {% else %}
+                Not Required
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+    <div class="container text-center mt-5">
+        <div class="row my-3">
+            <div class="col-12">
+                {% if updated %}
+    
+                <div class="alert alert-success" role="alert">
+                    Your booking is awaiting approval
+                </div>
+    
+                {% else %}
+    
+                <form method="post">
+                    {% csrf_token %}
+    
+                    {{ Update_Booking | crispy }}
+    
+                    <button type="submit">Submit Changes</button>
+                </form>
+    
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -103,39 +103,20 @@ The contents of the testing section can be find [here](testing.md).
 
 The site was deployed to Heroku using the following steps:
 
-- If necessary, the packages that were added to the file on this project were placed in the requirements.txt file.
-- Before deploying the project, a heroku account had to be made.
-- First, heroku will ask for the user's basic information.
-- This includes their first and last name, their email address, their role and the primary development language.
-- A statement would then pop up asking for the user to accept their terms and conditions.
-- The account has been created.
-- On the heroku dashboard, the create new app button is clicked.
-- A name which hasn't been used before has to be given to the app.
-- Choose a region, which is Europe in my case.
-- Complete the settings tab first.
-- Press the button that says settings on the navigation bar.
-- If the user has any sensitive or personal data, it should be placed in the Config Vars section.
-- Press the reveal config vars button.
-- Add in the name of the file that should be placed in capital letters in the first blank space.
-- Add in the actual code in the file named above into the second blank space.
-- Press add.
-- Then press the buildpack button below.
-- Select python from the selection given to you and press save changes.
-- Press buildpack again and this time select nodejs and save changes.
-- Make sure the python is on top of the nodejs.
-- After this, press the deploy button on the navigation bar.
-- Select Github from the three options give.
-- Press connect to Github.
-- Type in the name of the Github account the user is working with.
-- Type in the name of the repository.
-- Click Search.
-- Click connect which would connect the github code to the heroku app.
-- Make sure the branch is the main branch.
-- Press deploy branch.
-- If you want heroku to automatically build your code after pushing it to github each time, press enable automatic deploy.
-- Your pogramme has now been deployed.
-- Press view to view your programme.
-- The link to my programme can be found [here](https://annoying-battleships.herokuapp.com/)
+- I used the terminal to deploy my project locally. To do this I had to:
+1. Create a repository on GitHub.
+2. Clone the repository on your chosen source code editor (GitPod in my case) using the clone link.
+3. Open the terminal within GitPod
+4. Enter "python3 manage.py runserver into the terminal.
+5. Go to local host address on my web browser.
+6. All locally saved changes will show up here.
+
+For the final deployment to Heroku, I had to:
+1. Uncomment the PostgreSQL databse from my settings.py file.
+2. Set debug = False in my settings.py file.
+3. Commit and push all files to GitHub
+3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.
+4. In the deploy tab, go to the manual deploy sections and click deploy branch.
 
 # 7. Project Completion
 
@@ -153,10 +134,52 @@ The site was deployed to Heroku using the following steps:
 
 * Credits is given to [iKelvv](https://github.com/iKelvvv/MS4) for given me some code to be used in the programme. This is the code that was implemented into my programme in which I modified.
 ```
+class EditBooking(View):
+    model = Booking
+    template_name = 'edit_booking.html'
+    context_object_name = 'edit_booking'
 
+    def get(self, request, booking_id, *args, **kwargs):
+        booking = get_object_or_404(Booking, pk=booking_id)
+
+        return render(
+            request,
+            "edit_booking.html",
+            {
+                "booking": booking,
+                "updated": False,
+                "Update_Booking": UpdateBooking(instance=booking)
+            },
+        )
+
+    def post(self, request, booking_id, *args, **kwargs):
+        booking = get_object_or_404(Booking, pk=booking_id)
+
+        booking_details_form = UpdateBooking(
+            request.POST, instance=booking)
+
+        if booking_details_form.is_valid():
+            booking.status = 0
+            booking_updates = booking_details_form.save()
+        else:
+            booking_details_form = UpdateBooking(instance=booking)
+
+        return render(
+            request,
+            "edit_booking.html",
+            {
+                "booking": booking,
+                'updated': True,
+                "Update_Booking": booking_details_form,
+            },
+        )
 ``` 
 ```
-
+class DeleteBooking(DeleteView):
+    model = Booking
+    pk_url_kwarg = "booking_id"
+    success_url = reverse_lazy("reservations")
+    template_name = "delete_booking.html"
 ```
 ```
 
@@ -167,9 +190,19 @@ The site was deployed to Heroku using the following steps:
 ```
 
 ```
-* Credits is given to the Codestar walkthrough tutorial for the validation section of my programme.
+* Credits is given to the Codestar walkthrough tutorial for 
 ```
+class BookingList(generic.ListView):
+    model = Booking
+    queryset = Booking.objects.order_by('-created_date')
+    template_name = 'reservations.html'
+    paginate_by = 6
+    extra_context = {
+        "view_booking_active": "pressed"
+    }
 
+    def get_queryset(self):
+        return Booking.objects.filter(user_id=self.request.user)
 ```
 * For the Readme file, I took the structure from my previous Readme file and used it here. Reference is given to https://github.com/dhakal79/Portfolio-project-MS1 which is the readme file I took into consideration when I was doing my first one.
 

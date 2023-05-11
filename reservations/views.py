@@ -53,7 +53,7 @@ class BookingPage(TemplateView):
             }
         )
 
-class AddBooking(View):
+class AddBooking(View):   
     template_name = 'add_booking.html'
 
     def get(self, request, *args, **kwargs):
@@ -125,8 +125,6 @@ class DeleteBooking(DeleteView):
     pk_url_kwarg = "booking_id"
     success_url = reverse_lazy("reservations")
     template_name = "delete_booking.html"
-
-    
 
 class BookingList(generic.ListView):
     model = Booking

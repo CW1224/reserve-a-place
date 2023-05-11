@@ -4,56 +4,50 @@
 
 <div class="container">
 
-    <div class="">
-        <form class="" method="POST">
+    <div class="text-center big mt-3">
+        <h1>Booking</h1>
+        <h4>Open 7 days a week from 2pm-11pm</h4>
+    </div>
+
+    <div class="w-75 mx-auto my-5 ">
+        <form class="border px-4 py-4 " method="POST">
             {% csrf_token %}
 
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12 py-2 mx-auto">
                 <label for="full_name">Full Name:</label>
                 <input type="text" class="form-control" id="full_name" name="full_name" required>
             </div>
 
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12 py-2 mx-auto">
                 <label for="phone_number">Contact Telephone Number:</label>
                 <input type="number" class="form-control" id="phone_number" name="phone_number"
                     minlength="11" maxlength="11" required>
             </div>
 
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12 py-2 mx-auto">
                 <label for="date">Select a Date:</label>
                 <input type="date" class="" id="date" name="date" required>
             </div>
 
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12 py-2 mx-auto">
                 <label for="time">Select a time:</label>
-                <input type="time" class="" id="time" name="time" min="14:00" max="23:00" value="14:00"
+                <input type="time" class="" id="time" name="time" min="14:00" max="22:00" value="14:00"
                     required>
             </div>
 
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12 py-2 mx-auto">
                 <label for="guest_count">Number of guests:</label>
                 <input type="number" class="" id="guest_count" name="guest_count" min="1" max="10" required>
             </div>
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12 py-2 mx-auto">
                 <label for="highchair">Highchair:</label>
                 <input type="checkbox" class="" id="high_chair" name="high_chair" >
             </div>
 
-            <div class="">
-                <button type="submit" class="">Make Reservation</button>
+            <div class="text-center">
+                <button type="submit" class="btn button_green my-3">Make Reservation</button>
             </div>
-
         </form>
-
-        <div class="container">
-            <div class="row w-75 mx-auto">
-
-                <div class="col-md-6 col-12">
-                    <a class=""
-                        href="{% url 'booking' %}">My Bookings</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 

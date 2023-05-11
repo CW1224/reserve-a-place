@@ -2,17 +2,16 @@
 
 {% block content %}
 
-<header>
-    <h1>Would you like to make a booking?</h1>
-</header>
-
-{% if user.is_authenticated %}
-    <a href="{% url 'add_booking' %}">Make a booking</a>
-{% else %}
-    <h2>Please sign in before making a booking</h2>
-    <a href="{% url 'account_login' %}">Login</a>
-    <h3>Don't have an account?</h3>
-    <a href="{% url 'account_signup' %}">Sign up now</a>
-{% endif %}
+<div class="my-5 text-center">
+    {% if user.is_authenticated %}
+        <a class="btn button_green big"href="{% url 'add_booking' %}">Make a booking</a>
+    {% else %}
+        <h2>Please login before making a booking</h2>
+        <a class="btn button_green small mt-6" href="{% url 'account_login' %}">Login</a>
+        <p></p>
+        <h3>Don't have an account?</h3>
+        <a class="btn button_green small" href="{% url 'account_signup' %}">Sign up now</a>
+    {% endif %}
+</div>
 
 {% endblock %}

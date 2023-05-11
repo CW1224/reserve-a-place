@@ -2,6 +2,10 @@
     font-size: large;
 }
 
+.medium {
+    font-size: x-large;
+}
+
 .big {
     font-size: xx-large;
 }
@@ -45,6 +49,12 @@
 
 .btn-cream {
     background: rgb(248, 232, 151);
+}
+
+/*Styling lists*/
+
+ul {
+    list-style-type: none;
 }
 
 .green {

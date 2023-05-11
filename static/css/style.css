@@ -15,5 +15,10 @@
 }
 
 .green {
-    background-color: rgb(54, 169, 42);
+    color: rgb(54, 169, 42);
+}
+
+.pressed {
+    background-color: blue;
+    
 }

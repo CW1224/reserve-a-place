@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic import TemplateView
 from .models import Booking
@@ -11,7 +11,7 @@ class MainPage(TemplateView):
             request,
             "index.html",
             {
-                "home_active": "green",
+                "home_active": "pressed",
             }
         )
 
@@ -23,7 +23,7 @@ class MenuPage(TemplateView):
             request,
             "menu.html",
             {
-                "menu_active": "green",
+                "menu_active": "pressed",
             },
         )
 
@@ -35,7 +35,7 @@ class ContactPage(TemplateView):
             request,
             "contact.html",
             {
-                "contact_active": "green",
+                "contact_active": "pressed",
             },
         )
 
@@ -47,20 +47,36 @@ class BookingPage(TemplateView):
             request,
             "booking.html",
             {
-                "booking_active": "green",
+                "booking_active": "pressed",
             }
         )
 
-class BookingDetail(View):
-    template_name = 'reservation_detail.html'
+class AddBooking(View):
+    template_name = 'add_booking.html'
 
     def get(self, request, *args, **kwargs):
-        queryset = Booking.objects.filter(status=1)
-        return render(
-            request,
-            "index.html"
+            return render(
+                request,
+                "add_booking.html",
+            )
+
+    def post(self, request):
+        fullname = request.POST.get("full_name")
+        date = request.POST.get("date")
+        time = request.POST.get("time")
+        guest_count = request.POST.get("guest_count")
+        highchair = request.POST.get("highchair")
+
+        online_booking = Booking.objects.create(
+            booking_date=date,
+            booking_time=time,
+            number_guests=guest_count,
+            user=request.user,
         )
 
+        online_booking.save()
+
+        return redirect('reservations')
 
 class BookingList(generic.ListView):
     model = Booking
@@ -68,7 +84,7 @@ class BookingList(generic.ListView):
     template_name = 'reservations.html'
     paginate_by = 6
     extra_context = {
-        "view_booking_active": "green"
+        "view_booking_active": "pressed"
     }
 
     def get_queryset(self):

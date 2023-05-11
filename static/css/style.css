@@ -37,6 +37,20 @@ body {
     z-index:-1;
 }
 
+/* Menu Styling */
+
+.pink {
+    background-color: rgb(249, 213, 248);
+}
+
+.verde {
+    background-color: rgb(215, 252, 212);
+}
+
+.yellow {
+    background-color: rgb(253, 253, 198);
+}
+
 /* Styling buttons */
 
 .button_green {
@@ -73,4 +87,11 @@ ul {
 
 .green {
     color: rgb(54, 169, 42);
+}
+
+/* Media query max width 480px for small devices */
+@media screen and (max-width: 488px) {
+    .img {
+        width: 200%;
+    }
 }

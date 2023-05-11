@@ -16,7 +16,6 @@ You can find a link to my website [here]()
 - 1.4 Brainstorm
 
 [2.Features](#2-features)
-- 2.1 
 
 [3.Technology](#3-technology)
 
@@ -72,6 +71,14 @@ The following are expected of the website:
 
 ## 2.1 Navigation Bar
 
+The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
+- If the user is not logged in the navigation bar will look like this:
+![user_not_logged_in]()
+- If the user is logged in the navigation bar will look like this:
+![user_logged_in]()
+- The footer is placed at the bottom of each page with social media icons. These icons will open the links in a new tab.
+- The restaurant logo is also placed at the top of all pages. Clicking on it will also direct the user to the home page.
+
 ## 2.2 Login, Signup and Logout
 
 ## 2.3 Menu, Contacts and Homepage
@@ -114,6 +121,8 @@ The following are expected of the website:
 
 * [Google Fonts](https://fonts.google.com/) was used to import the font style for my project.
 
+* [W3C Markup](https://validator.w3.org/),[Jigsaw validation](https://jigsaw.w3.org/) and [JSHint](https://jshint.com/) tools were used to check for bugs in my code.
+
 # 4. Testing
 
 [Return to the Table of Contents](#table-of-contents)
@@ -124,6 +133,8 @@ The contents of the testing section can be find [here](testing.md).
 
 [Return to the Table of Contents](#table-of-contents)
 
+There were no major 
+
 
 # 6. Deployment
 
@@ -131,20 +142,78 @@ The contents of the testing section can be find [here](testing.md).
 
 The site was deployed to Heroku using the following steps:
 
-2. Set debug = False in my settings.py file.
-3. Commit and push all files to GitHub
-3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.
-4. In the deploy tab, go to the manual deploy sections and click deploy branch.
+- Install Django and the supporting libraries
+    - Install Django and Gunicorn. Gunicorn is the server that is used to run Django on Heroku.
+    - Install support libraries including psycopg2, this was used to connect the PostgreSQL database.
+    - Install Cloudinary libraries, this is a host provider service that stores images.
+    - The requirements.txt file was created to include the project's dependencies which allowed us to run the project in Heroku.
+
+- Create a new, blank Django Project
+    - Create a new project
+    - Create the app
+    - Add reservations to the installed apps in settings.py
+    - Migrate all new changes to the database
+    - Run the server to test
+
+- Setup project to use Cloudinary and PostgreSQL
+    - Create new Heroku app
+        - Sign into Heroku
+        - Select New
+        - Select create new app
+        - Enter a relevant app name
+        - Select appropriate region
+        - Select the create app button
+
+    - Attach PostgreSQL database
+        - In Heroku go to resources
+        - Search for Postgres in the add-ons box
+        - Select Heroku Postgres
+        - Submit order form
+
+    - Prepare the environment and settings.py file
+        - Create env.py file
+        - Add DATABASE_URL with the Postgres URL from Heroku
+        - Add SECRET_KEY with a randomly generated key
+        - Add SECRET_KEY and generated key to the config vars in Heroku
+        - Add if statement to settings.py to prevent the production server from erroring
+        - Replace insecure key with the environment variable for the SECRET_KEY
+        - Add Heroku database as the back end
+        - Migrate changes to new database
+
+    - Get static media files stored on Cloudinary
+        - Create a Cloudinary account
+        - From the dashboard, copy the API Environment variable
+        - In the settings.py file create a new environment variable for CLOUDINARY_URL
+        - Add the CLOUDINARY_URL variable to Heroku
+        - Add a temporary config var for DISABLE_COLLECTSTATIC
+        - In settings.py add Cloudinary as an installed app
+        - Add static and media file variables
+        - Add templates directory
+        - Change DIR's key to point to TEMPALTES_DIR
+        - Add Heroku hostname to allowed hosts
+        - Create directories for media, static and templates in the project workspace
+        - Create a Procfile
+
+- Deploy new empty project to Heroku
+
+- Set debug = False in the settings.py file of the repository
+- Commit and push all files to GitHub.
+- In Heroku, remove the DISABLE_COLLECTSTATIC config var.
+- In the deploy tab, go to the manual deploy sections and click deploy branch.
 
 # 7. Project Completion
 
 [Return to the Table of Contents](#table-of-contents)
 
+## Desktop Version
+
+## Mobile Version
+
 
 # 8. Improvements
 
 [Return to the Table of Contents](#table-of-contents)
-
+This is a resubmission attempt since the last one didn't meet the project's criteria. I had some problems highlighting some of the navigation headings since they are built into allauth. I didn't know where to go to find and adjust the code in order to highlight the headings so I left them as they were. Alsom in order to edit the edit booking section, the code wasn't user friendly. I didn't know where to go to adjust this problem either, hence I left it as it was.
 
 # 9. Acknowledgements
 

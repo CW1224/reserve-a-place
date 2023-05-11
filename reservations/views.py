@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from .models import Booking
 from .forms import UpdateBooking
 
+
 class MainPage(TemplateView):
     template_name = "index.html"
 
@@ -16,6 +17,7 @@ class MainPage(TemplateView):
                 "home_active": "pressed",
             }
         )
+
 
 class MenuPage(TemplateView):
     template_name = "menu.html"
@@ -29,6 +31,7 @@ class MenuPage(TemplateView):
             },
         )
 
+
 class ContactPage(TemplateView):
     template_name = "contact.html"
 
@@ -40,6 +43,7 @@ class ContactPage(TemplateView):
                 "contact_active": "pressed",
             },
         )
+
 
 class BookingPage(TemplateView):
     template_name = "booking.html"
@@ -53,14 +57,15 @@ class BookingPage(TemplateView):
             }
         )
 
-class AddBooking(View):   
+
+class AddBooking(View):
     template_name = 'add_booking.html'
 
     def get(self, request, *args, **kwargs):
-            return render(
-                request,
-                "add_booking.html",
-            )
+        return render(
+            request,
+            "add_booking.html",
+        )
 
     def post(self, request):
         fullname = request.POST.get("full_name")
@@ -79,6 +84,7 @@ class AddBooking(View):
         online_booking.save()
 
         return redirect('reservations')
+
 
 class EditBooking(View):
     model = Booking
@@ -120,11 +126,13 @@ class EditBooking(View):
             },
         )
 
+
 class DeleteBooking(DeleteView):
     model = Booking
     pk_url_kwarg = "booking_id"
     success_url = reverse_lazy("reservations")
     template_name = "delete_booking.html"
+
 
 class BookingList(generic.ListView):
     model = Booking
@@ -137,5 +145,3 @@ class BookingList(generic.ListView):
 
     def get_queryset(self):
         return Booking.objects.filter(user_id=self.request.user)
-    
-

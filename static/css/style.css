@@ -95,4 +95,12 @@ ul {
         border-radius: 0;
         padding: 5px;
     }
+    
+    .medium {
+        font-size: small;
+    }
+    
+    .big {
+        font-size: x-large;
+    }
 }

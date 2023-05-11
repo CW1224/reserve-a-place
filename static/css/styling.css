@@ -53,8 +53,16 @@ body {
     background: rgb(238, 74, 74);
 }
 
+.btn-red:hover {
+    background-color: rgb(164, 33, 33);
+}
+
 .btn-cream {
     background: rgb(248, 232, 151);
+}
+
+.btn-cream:hover {
+    background-color: rgb(249, 193, 136) ;
 }
 
 /*Styling lists*/

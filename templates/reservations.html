@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <h5 class="card-title">Booking Reference:</h5>
+                                <h5 class="card-title"><strong>Booking Reference:</strong></h5>
                             </div>
                             <div class="col-5">
                                 <a href="{% url 'edit_booking' booking.booking_id %}" class="btn btn-sm btn-cream">Modify Booking</a>
@@ -21,9 +21,9 @@
                             </div>
                         </div>
                         
-                        <a href="">{{ booking.booking_id }}</a>
+                        <p class="small">{{ booking.booking_id }}</p>
                         <p class="card-text col">
-                            Booking Status: {% if booking.status == 1 %}
+                            <strong>Booking Status:</strong> {% if booking.status == 1 %}
                             Booking Accepted
                             {% else %}
                             Booking Requested

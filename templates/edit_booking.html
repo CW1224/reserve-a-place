@@ -4,9 +4,8 @@
 
 {% load crispy_forms_tags %}
 
-<div class="container">
-
-    <div>{{ booking.booking_id }}</div>
+<div class="container w-75">
+    <div class="big text-center my-3"><strong>Booking:</strong> {{ booking.booking_id }}</div>
         <p class="card-text col">
             Booking Status: {% if booking.status == 1 %}
             Booking Accepted
@@ -35,6 +34,8 @@
                 <div class="alert alert-success" role="alert">
                     Your booking is awaiting approval
                 </div>
+
+                <a href="{% url 'reservations' %}" class="btn button_green my-3">Manage my Bookings</a>
     
                 {% else %}
     
@@ -43,7 +44,7 @@
     
                     {{ Update_Booking | crispy }}
     
-                    <button type="submit">Submit Changes</button>
+                    <button type="submit" class="btn button_green my-3">Submit Changes</button>
                 </form>
     
                 {% endif %}

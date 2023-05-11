@@ -2,18 +2,32 @@
 
 {% block content %}
 
-<h1>Are you sure you want to delete this booking?</h1>
-<div class="">
+<div class="col-12 mt-3 text-center">
     <form action="." method="POST">
         {% csrf_token %}
 
-        <h3>Do you want to cancel the booking "{{ booking.booking_id }}"?</h3>
+        <h3 class="mb-4">Do you want to cancel the booking "{{ booking.booking_id }}"?</h3>
 
-        <button class="btn" type="submit">Yes</button>
-
-        <a class="btn" href="{% url 'reservations' %}">
-            Cancel
-        </a>
+        <div>
+            <ul class="list-group w-50 mx-auto">
+                <li class="list-group-item">Booking Date: {{ booking.booking_date }}</li>
+                <li class="list-group-item">Booking Time: {{ booking.booking_time }}</li>
+                <li class="list-group-item">Number of Guests: {{ booking.number_guests }}</li>
+                <li class="list-group-item">Highchair: 
+                    {% if booking.high_chair == True %}
+                    Required
+                    {% else %}
+                    Not Required
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-red my-3" type="submit">Yes</button>
+            <a class="btn button_green my-3" href="{% url 'reservations' %}">
+                No
+            </a>
+        </div>
     </form>
 </div>
 {% endblock %}

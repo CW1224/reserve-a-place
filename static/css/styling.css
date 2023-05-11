@@ -6,9 +6,37 @@
     font-size: xx-large;
 }
 
+/* Navigation styling */
 .nav-link:hover {
     border:2px; 
+    border-radius: 5%;
     background-color: rgb(148, 222, 140);
+}
+
+.pressed {
+    background-color: rgb(148, 222, 140);
+    border-radius: 5%;
+    color:white;
+}
+
+/*Image Styling*/
+
+.img {
+    width:100%;
+    height:50vh;
+    z-index:-1;
+}
+
+/* Styling buttons */
+
+.button_green {
+    background-color: rgb(19, 180, 19);
+    color:white;
+}
+
+.button_green:hover {
+    background-color: rgb(19, 75, 180);
+    color:white;
 }
 
 .btn-red {
@@ -21,13 +49,4 @@
 
 .green {
     color: rgb(54, 169, 42);
-}
-
-.pressed {
-    background-color: rgb(148, 222, 140);
-    color:white;
-}
-
-footer {
-    bottom: 0;
 }

@@ -3,9 +3,13 @@
 {% block content %}
 
 <header>
-    <h1>Welcome to Awesome Dishes</h1>
-    <h3>You will find legendary dishes, freshly prepared by our professional chef!</h3>
-    <a href="{% url 'booking' %}">Make your booking today</a>
+    <div class="col-12 text-center">
+        <h1 class="my-3">Welcome to <strong>AWE</strong>SOME</span>
+            <span class="green"><strong>dishes</strong></span></h1>
+        <h3>Legendary dishes that are freshly prepared by our professional chef!</h3>
+        <h4 class="mb-3">Made from freshly picked vegetables and 100% irish meat</h4>
+        <a class="btn button_green big" href="{% url 'booking' %}">Make your booking today</a>
+    </div>
 </header>
 
 {% endblock %}

@@ -89,9 +89,10 @@ ul {
     color: rgb(54, 169, 42);
 }
 
-/* Media query max width 480px for small devices */
-@media screen and (max-width: 488px) {
-    .img {
-        width: 200%;
+/* Media query max width 768px for small devices */
+@media screen and (max-width: 768px) {
+    .pressed {
+        border-radius: 0;
+        padding: 5px;
     }
 }

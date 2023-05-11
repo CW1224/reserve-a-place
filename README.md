@@ -50,13 +50,17 @@ The following are expected of the website:
 * The language should be in simple English.
 * 
 
-## 1.3 Visual Images
+## 1.3 User Stories
 
 [Return to the Table of Contents](#table-of-contents)
 
 
 
-## 1.4 Brainstorm
+## 1.4 Strategy Table
+
+[Return to the Table of Contents](#table-of-contents)
+
+## 1.5 Wireframes
 
 [Return to the Table of Contents](#table-of-contents)
 
@@ -66,7 +70,17 @@ The following are expected of the website:
 
 [Return to the Table of Contents](#table-of-contents)
 
+## 2.1 Navigation Bar
 
+## 2.2 Login, Signup and Logout
+
+## 2.3 Menu, Contacts and Homepage
+
+## 2.4 Making a Booking
+
+## 2.5 Edit a Booking and Deleting a Booking
+
+## 2.6 Manage all bookings
 
 # 3. Technology
 
@@ -84,7 +98,21 @@ The following are expected of the website:
 
 * [Heroku](https://id.heroku.com/login) was used to deploy my project.
 
-* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to create the programme.
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to create the website.
+
+* [JS](https://en.wikipedia.org/wiki/JavaScript)(JavaScript) was used to make the website.
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) (Hypertext Markup Language 5) was used to create the webpages.
+
+* [CSS](https://en.wikipedia.org/wiki/CSS) (Cascading Style Sheets) was used to style the webpages.
+
+* [PostgreSQL](https://www.postgresql.org/) was used as a database.
+
+* [Pixabay](https://pixabay.com/) was used to download images. These images were then uploaded onto Cloudinary.
+
+* [Cloudinary](https://cloudinary.com/) was used as a database to store images.
+
+* [Google Fonts](https://fonts.google.com/) was used to import the font style for my project.
 
 # 4. Testing
 
@@ -103,16 +131,6 @@ The contents of the testing section can be find [here](testing.md).
 
 The site was deployed to Heroku using the following steps:
 
-- I used the terminal to deploy my project locally. To do this I had to:
-1. Create a repository on GitHub.
-2. Clone the repository on your chosen source code editor (GitPod in my case) using the clone link.
-3. Open the terminal within GitPod
-4. Enter "python3 manage.py runserver into the terminal.
-5. Go to local host address on my web browser.
-6. All locally saved changes will show up here.
-
-For the final deployment to Heroku, I had to:
-1. Uncomment the PostgreSQL databse from my settings.py file.
 2. Set debug = False in my settings.py file.
 3. Commit and push all files to GitHub
 3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.

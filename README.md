@@ -1,108 +1,177 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Awesome Dishes
 
-Welcome CW1224,
+Welcome to the readme file of my project.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Introduction
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This programme is designed to allow an user to 
 
-## Gitpod Reminders
+You can find a link to my website [here]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Table of Contents
+[1.User Experience(UX)](#1-user-experience)
+- 1.1 User Goals
+- 1.2 User Expectations
+- 1.3 Visual Images
+- 1.4 Brainstorm
 
-`python3 -m http.server`
+[2.Features](#2-features)
+- 2.1 
 
-A blue button should appear to click: _Make Public_,
+[3.Technology](#3-technology)
 
-Another blue button should appear to click: _Open Browser_.
+[4.Testing](#4-testing)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+[5.Bugs](#5-bugs)
 
-A blue button should appear to click: _Make Public_,
+[6.Deployment](#6-deployment)
 
-Another blue button should appear to click: _Open Browser_.
+[7.Project Completion](#7-project-completion)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+[8.Improvements](#8-improvements)
 
-To log into the Heroku toolbelt CLI:
+[9.Acknowledgements](#9-acknowledgements)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+# 1. User Experience
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## 1.1 User Goals
 
-------
+[Return to the Table of Contents](#table-of-contents)
 
-## Release History
+My goal in creating this programme 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## 1.2 User Expectations
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+[Return to the Table of Contents](#table-of-contents)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+The following are expected of the website:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* Should be easily accessible.
+* The language should be in simple English.
+* 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## 1.3 Visual Images
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+[Return to the Table of Contents](#table-of-contents)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## 1.4 Brainstorm
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+[Return to the Table of Contents](#table-of-contents)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+# 2. Features
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+[Return to the Table of Contents](#table-of-contents)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
 
-## FAQ about the uptime script
+# 3. Technology
 
-**Why have you added this script?**
+[Return to the Table of Contents](#table-of-contents)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+* [MD](https://en.wikipedia.org/wiki/Markdown) (Markdown) was used to create this readme file.
 
-**How will this affect me?**
+* [Gitpod](https://www.gitpod.io/) was used for the code input and edit for this project.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+* [Github](https://github.com/) was used to store my repository and code when it is not in use.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* [Slack](https://slack.com/intl/en-ie/) was used for communications when I was having trouble creating code.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+* [Pep8 Validator](http://pep8online.com/) was used to check for bugs in my code.
 
-**So….?**
+* [Heroku](https://id.heroku.com/login) was used to deploy my project.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to create the programme.
 
-**Can I opt out?**
+# 4. Testing
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+[Return to the Table of Contents](#table-of-contents)
+
+The contents of the testing section can be find [here](testing.md).
+
+# 5. Bugs
+
+[Return to the Table of Contents](#table-of-contents)
+
+
+# 6. Deployment
+
+[Return to the Table of Contents](#table-of-contents)
+
+The site was deployed to Heroku using the following steps:
+
+- If necessary, the packages that were added to the file on this project were placed in the requirements.txt file.
+- Before deploying the project, a heroku account had to be made.
+- First, heroku will ask for the user's basic information.
+- This includes their first and last name, their email address, their role and the primary development language.
+- A statement would then pop up asking for the user to accept their terms and conditions.
+- The account has been created.
+- On the heroku dashboard, the create new app button is clicked.
+- A name which hasn't been used before has to be given to the app.
+- Choose a region, which is Europe in my case.
+- Complete the settings tab first.
+- Press the button that says settings on the navigation bar.
+- If the user has any sensitive or personal data, it should be placed in the Config Vars section.
+- Press the reveal config vars button.
+- Add in the name of the file that should be placed in capital letters in the first blank space.
+- Add in the actual code in the file named above into the second blank space.
+- Press add.
+- Then press the buildpack button below.
+- Select python from the selection given to you and press save changes.
+- Press buildpack again and this time select nodejs and save changes.
+- Make sure the python is on top of the nodejs.
+- After this, press the deploy button on the navigation bar.
+- Select Github from the three options give.
+- Press connect to Github.
+- Type in the name of the Github account the user is working with.
+- Type in the name of the repository.
+- Click Search.
+- Click connect which would connect the github code to the heroku app.
+- Make sure the branch is the main branch.
+- Press deploy branch.
+- If you want heroku to automatically build your code after pushing it to github each time, press enable automatic deploy.
+- Your pogramme has now been deployed.
+- Press view to view your programme.
+- The link to my programme can be found [here](https://annoying-battleships.herokuapp.com/)
+
+# 7. Project Completion
+
+[Return to the Table of Contents](#table-of-contents)
+
+
+# 8. Improvements
+
+[Return to the Table of Contents](#table-of-contents)
+
+
+# 9. Acknowledgements
+
+[Return to the Table of Contents](#table-of-contents)
+
+* Credits is given to [iKelvv](https://github.com/iKelvvv/MS4) for given me some code to be used in the programme. This is the code that was implemented into my programme in which I modified.
+```
+
+``` 
+```
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
 ```
 
-**Anything more?**
+```
+```
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+```
+```
 
----
+```
+* Credits is given to the Codestar walkthrough tutorial for the validation section of my programme.
+```
 
-Happy coding!
+```
+* For the Readme file, I took the structure from my previous Readme file and used it here. Reference is given to https://github.com/dhakal79/Portfolio-project-MS1 which is the readme file I took into consideration when I was doing my first one.
+
+* The ideas and code I implemented into this project were taught to me by Code Institute.
+* My mentor Marcel Mulders supported me throughout the whole project. I couldn't have done it without his help.

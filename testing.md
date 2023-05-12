@@ -1,3 +1,5 @@
+## 4.1 Manual Testing
+
 ### 4.1.1 Navigation Buttons
 
 TEST            | OUTCOME                          | PASS / FAIL  
@@ -28,29 +30,27 @@ TEST            | OUTCOME                          | PASS / FAIL
 Correct Items Clicked | When submit button is clicked, and everything is filled out correctly, will bring user back to reservation page.| Pass
 Signin/Signup/Logout Clicked | When submit button is clicked, and everything is filled out correctly, will bring user back to home page.| Pass
 
-### 4.1.4 Timer
+### 4.1.4 Login/Logout/Signup
 
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Timer Resets | When next question button is clicked, timer resets to 10. | Pass
-Timer Stops | When an option is clicked, the timer stops. | Pass
-
-### 4.1.5 Results
-
-TEST            | OUTCOME                          | PASS / FAIL  
---------------- | -------------------------------- | ---------------
-Statement Changes Accordingly | Depending on the number of correct answers of the user, the statement, the user sees in the results box is different. | Pass
+Login successful | When login is successful, a little message would pop up to tell you this. | Pass
+Logout successful | When logout is successful, a little message would pop up to tell you this. | Pass
+Signup successful | When signup is successful, a little message would pop up to tell you this. | Pass
 
 ### 4.1.5 Website Analysis on a Desktop using Lighthouse
 
-The performance of my website is pretty good on the desktop browser.
+The performance of my website is pretty good on the desktop browser. This is a compiled list of all the functions of the browser.
 
-![Lighthouse 1]()
+![Lighthouse 1](documents/images/lighthouse-website.png)
 
 ### 4.1.6 Website Analysis on a Mobile using Lighthouse
 
-The performance of my website is mediocre on the mobile version.
-![Lighthouse 2]()
+The performance of my website is mediocre on the mobile version. This is a compiled list of all the functions of the browser.
+
+![Lighthouse 2](documents/images/lighthouse-mobile.png)
+
+Both lighthouse analysis are pretty high but the best practices and SEO aren't great.
 
 ## 4.2 Testing with Tools
 
@@ -73,18 +73,24 @@ I used the "Inspect" command on google chrome to check how responsive my website
 - Nest Hub
 - Nest Hub Max
 
+The website worked well on all of them. None of them distorts the website in any significant way.
+
 ### 4.2.2 W3C Validator Tools
 
-[W3C Markup](https://validator.w3.org/) was used to validate the html codes of my project. It was used to check if any errors were available and I had to correct them before continuing onto the next step. The image below had to be shown in order to confirm that there is no error in my project.
+[W3C Markup](https://validator.w3.org/) was used to validate the html codes of my project. It was used to check if any errors were available and I had to correct them before continuing onto the next step. This was hard to do because the system didn't like me using python functions in between, therefore I had to go around the functions and added in little segments at a time. The other option was to paste everything in and when the problems showed up, I ignored the ones that was associated with the python code.
 
-![Confirmation-HTML]()
+[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to check that all the code written in css were correct. Since most of the HTML code was decorated with Bootstrap, there wasn't a lot of css code. The image below tells me that there are no errors present in my code.
 
-[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to check that all the code written in css were correct. The image below tells me that there are no errors present in my code.
+![Confirmation-CSS](documents/images/css-bug-check.png)
 
-![Confirmation-CSS]()
+The terminal in gitpod was used to check for errors in my python code. 
 
-The terminal in gitpod was used to check for errors in my python code. Below is a picture that shows no major error in the code.
+![PythonCode](documents/images/python-bug.png)
 
-![Confirmation-Python]()
+These were the initial problems that were associated with my code. These were easily resolved by adding in indentations, getting rid of white spaces and adding an extra line between classes in the views.py file. The lines that were too long and caused a problem were shortened by separating them onto separate lines. Finally only some minor errors that were already present in the python code upon installing the package are left. Below is a picture that shows no major error in the code.
+
+![Confirmation-Python](documents/images/python-BUG-RESOLVE.png)
+
+The Javascript that I have been using in this project came from an external source and when I pasted it in into ![JS Hint](https://jshint.com/), the system tells me that there were no errors that would have an impact on the code.
 
 Return to the original readme file, press this [button](readme.md).

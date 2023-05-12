@@ -6,7 +6,7 @@ Welcome to the readme file of my project.
 
 This programme is designed to allow an user to make and cancel bookings online. The programme connects the codes that are used front-end and backend to do this. In order to make a successful website, HTML, CSS, Javascript, Django, Python have to be used in combination.
 
-You can find a link to my website [here](https://awesome-dishes.herokuapp.com/)
+You can find a link to my website [here](https://awesome-dishes.herokuapp.com/).
 
 # Table of Contents
 [1.User Experience(UX)](#1-user-experience)
@@ -130,6 +130,10 @@ If the user doesn't have an account, then s/he can sign up for one.
 And when a user wants to logout of their account, they can use the logout function.
 
 ![logout](documents/images/webpage-signout.png)
+
+If the email or password is incorrect when signing in, the following would appear.
+
+![error_login](documents/images/failed-webpage-password.png)
 
 ## 2.3 Menu, Contacts and Homepage
 

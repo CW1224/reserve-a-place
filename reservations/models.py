@@ -6,9 +6,19 @@ from cloudinary.models import CloudinaryField
 # Import Django authentication user system
 STATUS = ((0, 'Unapproved'), (1, 'Approved'))
 
+
 class Booking(models.Model):
-    booking_id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reservations')
+    booking_id = models.UUIDField(
+        primary_key=True,
+        unique=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='reservations'
+    )
     created_date = models.DateTimeField(auto_now=True)
     booking_date = models.DateField(auto_now=False)
     booking_time = models.TimeField(auto_now=False)

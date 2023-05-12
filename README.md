@@ -38,7 +38,7 @@ You can find a link to my website [here](https://awesome-dishes.herokuapp.com/)
 
 [Return to the Table of Contents](#table-of-contents)
 
-My goal in creating this programme 
+My goal in creating this programme is for customers and visitors of the website to be able to make bookings once they see the kind of food the restaurant offers. Likewise, I want to give them the option of deleting a booking if they change their mind.
 
 ## 1.2 User Expectations
 
@@ -48,18 +48,51 @@ The following are expected of the website:
 
 * Should be easily accessible.
 * The language should be in simple English.
-* 
+* The user should be able to login and out easily.
+* The user should be able to make and edit bookings without hassle. They can choose the time and date, they want their booking to be on.
+* The user should be able to delete bookings if they can't make it.
+* The user can sign up to the website if they haven't an account. 
+* The user should be able to see a list of all their previous bookings.
+* The user should be able to access the website on different devices, not just through the computer.
+* The user should be able to view the menu and contact the restaurant if needed.
 
 ## 1.3 User Stories
 
 [Return to the Table of Contents](#table-of-contents)
 
+Throughout the project, I used github user stories to record and keep track of my tasks. At the beginning, I listed all the things I needed to do, moved them to the second column when I am working on them and finally to the last column when I am done with that task.
+![user_story_board](documents/images/user_stories.png)
 
 ## 1.4 Wireframes
 
 [Return to the Table of Contents](#table-of-contents)
 
+### Mobile Wireframe
+
+This was what I had in mind when I was coming up with the skeleton of the project. It was going to be a navigation bar at the too with the logo, followed by a picture, then the rest of the information.
+![user_story_board](documents/images/webframe-mobile.png)
+
+### Website Wireframe
+
+![user_story_board](documents/images/webframe-website.png)
+
 ## 1.5 Strategy Table
+
+Opportunity/Problem/Feature| Importance| Viability/Feasibility
+------------ | -------------------------|---------
+Display a food Menu | 5 | 5
+Account signup | 5 | 5
+Responsive design | 5 | 5
+Contact form | 4 | 5
+Ability to create a booking | 5 | 4
+Ability to update a booking | 5 | 4
+Ability to cancel a booking | 3 | 4
+Ability to view previous bookings | 4 | 5
+Account login/logout | 5 | 5
+Multiple table occupancies | 4 | 1
+Avoid double bookings | 4 | 1
+
+It isn't easy to include everything in the above table. Therefore, I have listed them according to their importance and would follow this list.
 
 # 2. Features
 
@@ -68,20 +101,57 @@ The following are expected of the website:
 ## 2.1 Navigation Bar
 
 The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
-- If the user is not logged in the navigation bar will look like this:
-![user_not_logged_in]()
-- If the user is logged in the navigation bar will look like this:
-![user_logged_in]()
+- If the user is not logged in the navigation bar will not have the logout or manage booking header. Likewise, when the user tries to make a booking, a message would pop up to say that the user must first login.
+- If the user is logged in the navigation bar will not have the login or register function. Instead the logout and manage booking header would appear. The user would also be able to make a booking, edit that booking or delete it.
 - The footer is placed at the bottom of each page with social media icons. These icons will open the links in a new tab.
 - The restaurant logo is also placed at the top of all pages. Clicking on it will also direct the user to the home page.
 
 ## 2.2 Login, Signup and Logout
 
+The login function would allow the user to signin if the user already has an account.
+
+![login](documents/images/webpage-signin.png)
+
+If the user doesn't have an account, then s/he can sign up for one.
+
+![signup](documents/images/webpage-signup.png)
+
+And when a user wants to logout of their account, they can use the logout function.
+
+![logout](documents/images/webpage-signout.png)
+
 ## 2.3 Menu, Contacts and Homepage
+
+The menu, contacts and homepage respectively, shows the restaurant's menu, the restaurant's contact information and the website's homepage.
+
+![menu](documents/images/WEBPAGE-1.png)
+![menu](documents/images/WEBPAGE-2.png)
+![menu](documents/images/WEBPAGE-3.png)
 
 ## 2.4 Making a Booking
 
+This page allows the user to make a booking provided that the user is logged in. If the user isn't, the following error would appear.
+
+![please_login](documents/images/webpage-login%20first.png)
+
+Once the user logs in, the message would disappear to show this.
+
+![make_booking](documents/images/webpage-make-abooking.png)
+
+When the button is clicked, the following would appear.
+![booking](documents/images/booking-website.png)
+
 ## 2.5 Edit a Booking and Deleting a Booking
+
+Once a booking has been made, the user can still edit it if they believe that some of the information is no longer relevant to their situation. They can press the modify booking button on the booking they want to change and the following should appear.
+
+![edit_booking](documents/images/webpage-editbooking.png)
+
+They can also choose to delete the booking by pressing the delete button. The following would appear if the user presses the delete button.
+
+![delete_booking](documents/images/webpage-delete.png)
+
+The user can then choose yes or no. If the user chooses no, then they would be transferred back to the reservations page without changing any of the booking information. But if the user chooses yes, the booking would be deleted.
 
 ## 2.6 Manage all bookings
 
@@ -140,6 +210,8 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend"
 )
 '''
+
+There are a lot of minor mistakes however and these are recorded in detail in the testing.md file in which you can access [here](testing.md).
 
 # 6. Deployment
 

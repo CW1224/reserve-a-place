@@ -105,6 +105,17 @@ The navigation bar is placed at the top of all pages. The navigation bar is dyna
 - If the user is logged in the navigation bar will not have the login or register function. Instead the logout and manage booking header would appear. The user would also be able to make a booking, edit that booking or delete it.
 - The footer is placed at the bottom of each page with social media icons. These icons will open the links in a new tab.
 - The restaurant logo is also placed at the top of all pages. Clicking on it will also direct the user to the home page.
+- The navigation bar would change depending on whether the user is using a laptop or a tablet or a phone. On a computer, the navigation bar would look like this.
+
+![nav_bar_comp](documents/images/WEBPAGE-1.png)
+
+On a tablet or a phone, the navbar would look like this.
+
+![navbar_mob](documents/images/mobile-1.png)
+
+When toggled, it would look like this.
+
+![navbar_toggled](documents/images/mobile-nav.png)
 
 ## 2.2 Login, Signup and Logout
 
@@ -154,6 +165,15 @@ They can also choose to delete the booking by pressing the delete button. The fo
 The user can then choose yes or no. If the user chooses no, then they would be transferred back to the reservations page without changing any of the booking information. But if the user chooses yes, the booking would be deleted.
 
 ## 2.6 Manage all bookings
+
+When the user chooses the view bookings header, s/he would be directed to the page below.
+
+![view_booking](documents/images/webpage-viewbooking.png)
+
+This page shows the user all the bookings s/he has made so far with this account and would also tell him/her whether the booking has been approved or not. It also shows them the information that have inserted and gives them the option to change it if needs be. If more than six bookings have been made altogether, at the bottom of this page, a link to the next page would appear. Likewise, if the patient is on the next page, a button would appear, giving the user the option to return to the prvious page.
+
+![next_page](documents/images/webpage-paginate.png)
+![prev_page](documents/images/webpage-paginate2.png)
 
 # 3. Technology
 
@@ -284,7 +304,32 @@ The site was deployed to Heroku using the following steps:
 
 ## Desktop Version
 
+![webpage1](documents/images/WEBPAGE-1.png)
+![webpage2](documents/images/webpage-2.png)
+![webpage3](documents/images/webpage-3.png)
+![webpage4](documents/images/webpage-login%20first.png)
+![webpage5](documents/images/webpage-signin.png)
+![webpage6](documents/images/webpage-signup.png)
+![webpage7](documents/images/webpage-viewbooking.png)
+![webpage8](documents/images/webpage-make-abooking.png)
+![webpage9](documents/images/webpage-editbooking.png)
+![webpage10](documents/images/webpage-delete.png)
+![webpage11](documents/images/webpage-signout.png)
+
 ## Mobile Version
+
+![mobile1](documents/images/mobile-1.png)
+![mobile2](documents/images/mobile-2.png)
+![mobile3](documents/images/mobile-3.png)
+![mobile4](documents/images/mobile-booking.png)
+![mobile5](documents/images/mobile-edit.png)
+![mobile6](documents/images/mobile-delete.png)
+![mobile7](documents/images/mobile-login-first.png)
+![mobile8](documents/images/mobile-logout.png)
+![mobile9](documents/images/mobile-nav.png)
+![mobile10](documents/images/mobile-viewbooking.png)
+![mobile11](documents/images/mobile-signin.png)
+![mobile12](documents/images/mobile-signuo.png)
 
 # 8. Improvements
 

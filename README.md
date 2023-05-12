@@ -123,6 +123,8 @@ The navigation bar is placed at the top of all pages. The navigation bar is dyna
 
 * [W3C Markup](https://validator.w3.org/),[Jigsaw validation](https://jigsaw.w3.org/) and [JSHint](https://jshint.com/) tools were used to check for bugs in my code.
 
+* [Auto Draw](https://www.autodraw.com/) was used to create my webframes.
+
 # 4. Testing
 
 [Return to the Table of Contents](#table-of-contents)
@@ -133,8 +135,15 @@ The contents of the testing section can be find [here](testing.md).
 
 [Return to the Table of Contents](#table-of-contents)
 
-There were no major 
-
+There were no major error overall but after deployment, I realised that even though I had both the email and the password correct, I couldn't login with them again. This was resolved by adding the following to the settings.py file.
+'''
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend"
+)
+'''
 
 # 6. Deployment
 
@@ -209,7 +218,6 @@ The site was deployed to Heroku using the following steps:
 
 ## Mobile Version
 
-
 # 8. Improvements
 
 [Return to the Table of Contents](#table-of-contents)
@@ -269,15 +277,54 @@ class DeleteBooking(DeleteView):
     template_name = "delete_booking.html"
 ```
 ```
+class Booking(models.Model):
+    booking_id = models.UUIDField(
+        primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_bookings")
+    booking_date = models.DateField(auto_now=False)
+    booking_time = models.TimeField(auto_now=False)
+    booking_comments = models.TextField(max_length=200, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    guest_count = models.IntegerField()
+    status = models.IntegerField(choices=STATUS, default=0)
 
+    class Meta:
+        ordering = ['-booking_date']
 ```
+```
+class OnlineBookingView(View):
+    template_name = "online_booking.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            "online_booking.html",
+            {
+                "online_booking_active": "custom-red",
+            }
+        )
+
+    def post(self, request):
+        date = request.POST.get("date")
+        time = request.POST.get("time")
+        guest_count = request.POST.get("guest_count")
+        comments = request.POST.get("comments")
+
+        online_booking = Booking.objects.create(
+            booking_date=date,
+            booking_time=time,
+            guest_count=guest_count,
+            user=request.user,
+            booking_comments=comments
+        )
+
+        online_booking.save()
+
+        return redirect(reverse('manage_booking'))
 ```
 
-```
-```
-
-```
-* Credits is given to the Codestar walkthrough tutorial for 
+* Credits is given to the Codestar walkthrough tutorial for how to create the website from scratch and its code. Some of the codes in this project were incorporated into awesome dishes.
 ```
 class BookingList(generic.ListView):
     model = Booking

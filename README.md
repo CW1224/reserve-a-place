@@ -4,16 +4,17 @@ Welcome to the readme file of my project.
 
 ## Introduction
 
-This programme is designed to allow an user to 
+This programme is designed to allow an user to make and cancel bookings online. The programme connects the codes that are used front-end and backend to do this. In order to make a successful website, HTML, CSS, Javascript, Django, Python have to be used in combination.
 
-You can find a link to my website [here]()
+You can find a link to my website [here](https://awesome-dishes.herokuapp.com/)
 
 # Table of Contents
 [1.User Experience(UX)](#1-user-experience)
 - 1.1 User Goals
 - 1.2 User Expectations
-- 1.3 Visual Images
-- 1.4 Brainstorm
+- 1.3 User Stories
+- 1.4 Wireframe
+- 1.5 Strategy Tables
 
 [2.Features](#2-features)
 
@@ -54,16 +55,11 @@ The following are expected of the website:
 [Return to the Table of Contents](#table-of-contents)
 
 
-
-## 1.4 Strategy Table
-
-[Return to the Table of Contents](#table-of-contents)
-
-## 1.5 Wireframes
+## 1.4 Wireframes
 
 [Return to the Table of Contents](#table-of-contents)
 
-
+## 1.5 Strategy Table
 
 # 2. Features
 
